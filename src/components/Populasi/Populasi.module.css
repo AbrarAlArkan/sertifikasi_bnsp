@@ -1,0 +1,35 @@
+.container{
+    margin: 2rem rem;
+    text-align: center;
+}
+
+.judul{
+    color: #17e66d;
+    font-size: 2.44rem;
+    font-family: 'Poppins', sans-serif;
+}
+
+.subJudul{
+    color: #2b8fe6;
+    margin-bottom: 2rem;
+    font-size: 1.59rem;
+}
+
+.kartu{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+@media (min-width:768px) {
+
+}
+
+@media (min-width: 992px) {
+    .kartu {
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
