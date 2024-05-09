@@ -4,6 +4,7 @@ import Hero from "../../components/Hero/Hero";
 import Populasi from "../../components/Populasi/Populasi";
 import Provinsi from "../../components/Provinsi/Provinsi";
 import data from "../../utils/constants/provinces"
+import Form from "../../components/Form/Form";
 import { useState } from "react";
 
 function HomePage() {
@@ -20,6 +21,7 @@ function HomePage() {
         dataProvinsi={dataProvinsi}
         setDataProvinsi={setDataProvinsi}
         />
+        <Form dataProvinsi={dataProvinsi} setDataProvinsi={setDataProvinsi} />
       </main>
       <Footer />
     </div>

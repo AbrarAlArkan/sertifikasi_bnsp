@@ -1,35 +1,53 @@
 .container{
-    margin: 2rem rem;
     text-align: center;
+    padding: 1rem;
 }
 
-.judul{
-    color: #17e66d;
+.Populasi_title{
+    margin-bottom: 1rem;
     font-size: 2.44rem;
-    font-family: 'Poppins', sans-serif;
+    color: #06D6A0;
 }
 
-.subJudul{
-    color: #2b8fe6;
-    margin-bottom: 2rem;
-    font-size: 1.59rem;
+.Populasi_desc{
+    margin-bottom: 1rem;
+    font-size: 1.44rem;
+    color: #118AB2;
 }
 
-.kartu{
-    display: flex;
-    align-items: center;
-    flex-direction: column;
+.Populasi_status{
+    font-size: 2.44rem;
+    color:black;
 }
 
-@media (min-width:768px) {
-
+.Populasi_jumlah{
+    color: aqua;
 }
 
-@media (min-width: 992px) {
-    .kartu {
-        flex-direction: row;
-        align-items: center;
+.covid {
+    box-shadow: 0 3px 20px rgba(0, 0, 0,0.2);
+    border-radius: 12px;
+    background-color: white;
+    padding: 30px;
+    margin-left: 70px;
+}
+@media(min-width:768px){
+    .container{
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .Populasi_container{
+        display: flex;
         justify-content: center;
+        flex-direction: row;
+        flex-wrap: wrap;
     }
 }
 
+@media(min-width:992px){
+    .container{
+        max-width: 1200px;
+        margin: 3rem auto;
+    }
+}

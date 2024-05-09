@@ -1,23 +1,24 @@
 import styles from "./Populasi.module.css"
-import Data from "../../utils/constants/indonesia"
-import Kartu from "./Kartu/Kartu"
+import data from "../../utils/constants/indonesia";
+import Kartu from "./Kartu/Kartu";
+import {nanoid} from "nanoid";
 
 function Populasi() {
-    const populasi = Data.indonesia;
-
-    return (
+    const dataCovid = data.indonesia;
+    return(
         <div className={styles.container}>
-            <h1 className={styles.judul}>Indonesia</h1>
-            <p className={styles.subJudul}>Data Covid berdasarkan Indonesia</p>
-            <div className={styles.kartu}>
-                {
-                    populasi.map((data) => {
-                        return <Kartu status={data.status} total={data.total} />
-                    })
-                }
-            </div>
+            <section className={styles.Populasi}>
+                <h2 className={styles.Populasi_title}>Indonesia</h2>
+                <h4 className={styles.Populasi_desc}>Data Covid Berdasarkan Indonesia</h4>
+                <div className={styles.Populasi_container}>
+                    {
+                    dataCovid.map(function (covid){
+                        return <Kartu covid={covid} key={covid.status}/>
+                    })}
+                </div>
+            </section>
         </div>
-    )
+    );
 }
 
 export default Populasi;

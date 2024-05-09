@@ -1,13 +1,13 @@
 import styles from "./Kartu.module.css"
 
 function Kartu(props) {
-    const {status, total} = props
+    const {covid} = props;
     return (
-        <div className={styles.kartu}>
-            <h1 className={styles.status}>{status}</h1>
-            <p className={styles.total}>{total}</p>
+        <div className={styles.covid}>
+            <h3 className={styles.covid_status}>{covid.status}</h3><br></br>
+            <p className={styles.covid_jumlah} style={{color:covid.color}}>{covid.total}</p>
         </div>
-    )
+    );
 }
 
 export default Kartu;
