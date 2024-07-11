@@ -1,11 +1,12 @@
 import { nanoid } from "nanoid";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import image2 from "../../assets/poto2.jpeg";
-import styles from "./Form.module.css";
+import FormStyled from "./FormStyled";
 import Alert from "../Alert/Alert";
+import ProvinsiContext from "../Context/ProvinsiContext";
 
-function Form(props) {
-  const { dataProvinsi, setDataProvinsi } = props;
+function Form() {
+  const { dataProvinsi, setDataProvinsi } = useContext(ProvinsiContext);
   const [province, setProvince] = useState(dataProvinsi[0].kota);
   const [status, setStatus] = useState("positif");
   const [jumlah, setJumlah] = useState(0);
@@ -71,25 +72,25 @@ function Form(props) {
     }
   }
   return (
-    <div className={styles.container}>
-      <section className={styles.form}>
-        <div className={styles.form__left}>
-          <img className={styles.form__image} src={image2} alt="" />
+    <FormStyled>
+      <section className="form">
+        <div className="form__left">
+          <img className="form__image" src={image2} alt="" />
         </div>
-        <div className={styles.form__right}>
-          <h2 className={styles.form__title}>Form Covid</h2>
+        <div className="form__right">
+          <h2 className="form__title">Form Covid</h2>
           {isSuccess && (
             <Alert success={isSuccess}>Data Succesfully Added</Alert>
           )}
           <form onSubmit={handleSubmit}>
-            <div className={styles.form__group}>
-              <label htmlFor="provinsi" className={styles.form__label}>
+            <div className="form__group">
+              <label htmlFor="provinsi" className="form__label">
                 Provinsi
               </label>
               <select
                 value={province}
                 onChange={handleProvince}
-                className={styles.form__input}
+                className="form__input"
               >
                 {dataProvinsi.map(function (province) {
                   let id = nanoid();
@@ -102,14 +103,14 @@ function Form(props) {
                 {isProvinceError && <Alert>The Province is Required </Alert>}
               </select>
             </div>
-            <div className={styles.form__group}>
-              <label htmlFor="status" className={styles.form__label}>
+            <div className="form__group">
+              <label htmlFor="status" className="form__label">
                 Status
               </label>
               <select
                 value={status}
                 onChange={handleStatus}
-                className={styles.form__input}
+                className="form__input"
               >
                 <option value="positif">Positif</option>
                 <option value="sembuh">Sembuh</option>
@@ -118,13 +119,13 @@ function Form(props) {
               </select>
               {isStatusError && <Alert>The Status is Required</Alert>}
             </div>
-            <div className={styles.form__group}>
-              <label className={styles.form__label} htmlFor="">
+            <div className="form__group">
+              <label className="form__label" htmlFor="">
                 Jumlah
               </label>
               <input
                 onChange={handleJumlah}
-                className={styles.form__input}
+                className="form__input"
                 value={jumlah}
                 type="number"
                 min="0"
@@ -134,12 +135,12 @@ function Form(props) {
               {isJumlahError && <Alert>The Jumlah is Required</Alert>}
             </div>
             <div>
-              <button className={styles.form__button}>Submit</button>
+              <button className="form__button">Submit</button>
             </div>
           </form>
         </div>
       </section>
-    </div>
+    </FormStyled>
   );
 }
 

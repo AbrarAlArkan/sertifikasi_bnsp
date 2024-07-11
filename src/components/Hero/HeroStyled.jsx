@@ -1,7 +1,9 @@
-/* Small Screen */
-.container {
+import styled from "styled-components";
+
+const HeroStyled = styled.div`
+    /* Small Screen */
+
     margin: 1rem;
-  }
   
   .hero {
     display: flex;
@@ -76,3 +78,6 @@
       flex-basis: 60%;
     }
   }
+`;
+
+export default HeroStyled;

@@ -1,13 +1,13 @@
-/* Small Screen */
-.container {
+import styled from "styled-components";
+
+const NavbarStyled = styled.div`
+    /* Small Screen */
     background-color: #17e66d;
     padding: 1rem;
     color: #fff;
-  }
   
   .navbar {
     display: flex;
-    display: inline;
     flex-direction: column;
   }
   
@@ -24,6 +24,8 @@
   
   .navbar__item {
     margin-bottom: 1rem;
+    text-decoration: none;
+    color: white;
   }
   
   /* Medium Screen */
@@ -54,3 +56,6 @@
      * We haven't styling Navbar.
      */
   }
+`;
+
+export default NavbarStyled;

@@ -1,22 +1,24 @@
-import styles from "./footer.module.css";
+import FooterStyled from "./FooterStyled";
 
 function Navbar() {
     return (
-        <div className={styles.container}>
-            <nav className={styles.navbar}>
+        <FooterStyled>
+        <div className="container">
+            <nav className="navbar">
                 <div>
-                    <h1 className={styles.navbar__brand}>Covid Id</h1>
+                    <h1 className="navbar__brand">Covid Id</h1>
                 </div>
                 <div>
-                    <ul className={styles.navbar__list}>
-                        <li className={styles.navbar__item}>Global</li>
-                        <li className={styles.navbar__item}>Indonesia</li>
-                        <li className={styles.navbar__item}>Provinsi</li>
-                        <li className={styles.navbar__item}>About</li>    
+                    <ul className="navbar__list">
+                        <li className="navbar__item">Global</li>
+                        <li className="navbar__item">Indonesia</li>
+                        <li className="navbar__item">Provinsi</li>
+                        <li className="navbar__item">About</li>    
                     </ul>
                 </div>
             </nav>
         </div>
+        </FooterStyled>
     );
 }
 

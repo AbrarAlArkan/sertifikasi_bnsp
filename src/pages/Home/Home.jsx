@@ -1,29 +1,27 @@
-import Navbar from "../../components/Navbar/Navbar";
-import Footer from "../../components/Footer/Footer";
 import Hero from "../../components/Hero/Hero";
 import Populasi from "../../components/Populasi/Populasi";
-import Provinsi from "../../components/Provinsi/Provinsi";
-import data from "../../utils/constants/provinces"
-import Form from "../../components/Form/Form";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 function HomePage() {
 
-  const [dataProvinsi, setDataProvinsi] = useState(data.provinces);
+  const [dataGlobal, setDataGlobal] = useState([]);
+  const [dataRegions, setDataRegions] = useState([]);
+
+  useEffect(() => {
+    async function fetchGlobalData() {
+      const response = await axios("https://covid-fe-2023.vercel.app/api/global.json");
+      setDataGlobal(response.data.global);
+      setDataRegions(response.data.regions);
+    }
+    fetchGlobalData();
+  }, [])
 
   return (
     <div>
-      <Navbar />
-      <main>
         <Hero/>
-        <Populasi/>
-        <Provinsi 
-        dataProvinsi={dataProvinsi}
-        setDataProvinsi={setDataProvinsi}
-        />
-        <Form dataProvinsi={dataProvinsi} setDataProvinsi={setDataProvinsi} />
-      </main>
-      <Footer />
+        <Populasi dataCovid={dataGlobal}/>
+        <Populasi  dataCovid={dataRegions}/>
     </div>
   );
 }

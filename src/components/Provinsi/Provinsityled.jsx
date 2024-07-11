@@ -1,7 +1,8 @@
-.container {
+import styled from "styled-components";
+
+const ProvinsiStyled = styled.div`
     margin: 20px;
     text-align: center;
-  }
   
   .provinsi {
     background-color: #fff;
@@ -44,3 +45,6 @@
     background-color: #f2f2f2;
   }
   
+`;
+
+export default ProvinsiStyled;
