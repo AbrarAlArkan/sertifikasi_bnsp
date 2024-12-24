@@ -11,7 +11,7 @@ function Populasi(props) {
         <PopulasiStyled>
             <section className="Populasi">
                 <h2 className="Populasi_title">Indonesia</h2>
-                <h4 className="Populasi_desc">Data Covid Berdasarkan Indonesia</h4>
+                <h4 className="Populasi_desc"></h4>
                 <div className="Populasi_container">
                     {
                     dataCovid.map(function (covid){

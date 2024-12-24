@@ -6,14 +6,22 @@ function Navbar() {
         <NavbarStyled>
             <nav className="navbar">
                 <div>
-                    <h1 className="navbar__brand">Covid Id</h1>
+                    <h1 className="navbar__brand">Technova</h1>
                 </div>
                 <div>
                     <ul className="navbar__list">
-                        <Link className="navbar__item" to='/'><li className="navbar__item">Global</li></Link>
-                        <Link className="navbar__item" to='/indonesia'><li className="navbar__item">Indonesia</li></Link>
-                        <Link className="navbar__item" to='/provinsi'><li className="navbar__item">Provinsi</li></Link>
-                        <Link className="navbar__item" to='/about'><li className="navbar__item">About</li></Link>
+                        <li className="navbar__item" key="global">
+                            <Link to="/">Global</Link>
+                        </li>
+                        <li className="navbar__item" key="indonesia">
+                            <Link to="/indonesia">Indonesia</Link>
+                        </li>
+                        <li className="navbar__item" key="provinsi">
+                            <Link to="/provinsi">Provinsi</Link>
+                        </li>
+                        <li className="navbar__item" key="about">
+                            <Link to="/about">About</Link>
+                        </li>
                     </ul>
                 </div>
             </nav>

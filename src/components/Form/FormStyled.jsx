@@ -46,14 +46,14 @@ const FormStyled = styled.div`
     }
     
     .form__input:focus {
-        border: 1px solid #06d6a0;
+        border: 1px solidrgb(196, 23, 230);
     }
     
     .form__button {
         padding: 0.8rem 2rem;
         border: none;
         border-radius: 10px;
-        background-color: #06d6a0;
+        background-color:rgb(196, 23, 230);
         color: #fff;
         display: block;
         margin: 0 auto;
