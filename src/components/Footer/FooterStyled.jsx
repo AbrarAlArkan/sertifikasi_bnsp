@@ -3,7 +3,7 @@ import styled from "styled-components";
 const FooterStyled = styled.div`
     /* Small Screen */
     .container {
-        background-color: rgb(23, 147, 230);
+        background-color: rgb(10, 117, 189);
         padding: 1rem;
         color: #fff;
     }
